@@ -18,8 +18,7 @@
   <project
 	path="build"
 	name="buglabs/android-buglabs-build"
-	remote="github"
-	revision="froyo-buglabsdemo" >
+	remote="github" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
@@ -30,7 +29,6 @@
 	path="device/buglabs"
 	name="buglabs/android-buglabs-device"
 	remote="github"
-	revision="froyo-buglabsdemo"
   />
   
   <!-- Simple demo application that can be added to the images. -->
@@ -38,7 +36,6 @@
 	path="packages/apps/buglabs-demo-app"
 	name="buglabs/android-buglabs-demo-app"
 	remote="github"
-	revision="master"
   />
 
   <!-- omap3-specific gralloc implementation from 0xdroid project -->
