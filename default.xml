@@ -1,36 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- General git host for BugLabs Android stuff -->
-  <remote  name="buglabsdemo"
-           fetch="git@github.com:thebohemian/" />
-
-  <remote  name="cekay"
-           fetch="git@github.com:cekay/" />
+  <remote  name="github"
+           fetch="git@github.com:" />
 
   <remote  name="gitorious"
-           fetch="http://git.gitorious.org/0xdroid/" />
+           fetch="http://git.gitorious.org/" />
 
   <remote  name="korg"
            fetch="http://android.git.kernel.org/"
            review="review.source.android.com" />
+
   <default revision="froyo"
            remote="korg" />
 
-  <!-- name: platform/build was replaced with 'android-buglabs-demo'
-       this part is appended to the fetch URL (and then .git is appended
-       to the result.
-  -->
-  <project path="build" name="android-buglabsdemo-build"
-	remote="buglabsdemo" revision="froyo-buglabsdemo" >
+  <!-- Java6-enabled 'build' tree, otherwise identical to upstream project -->
+  <project
+	path="build"
+	name="buglabs/android-buglabs-build"
+	remote="github"
+	revision="froyo-buglabsdemo" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
   <!-- Brings 'device/buglabs' into the tree and add the 'bug20'
   product.
   -->
-  <project path="device/buglabs" name="android-buglabs-device"
-	remote="buglabsdemo" revision="froyo-buglabsdemo" />
+  <project
+	path="device/buglabs"
+	name="buglabs/android-buglabs-device"
+	remote="github"
+	revision="froyo-buglabsdemo"
+  />
+  
+  <!-- Simple demo application that can be added to the images. -->
+  <project
+	path="packages/apps/buglabs-demo-app"
+	name="buglabs/android-buglabs-demo-app"
+	remote="github"
+	revision="master"
+  />
 
+  <!-- omap3-specific gralloc implementation from 0xdroid project -->
+  <project
+	path="hardware/omap3/libgralloc"
+	name="0xdroid/hardware_omap3_libgralloc"
+	remote="gitorious"
+	revision="master"
+  />
+  
   <project path="bionic" name="platform/bionic" />
 
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
@@ -140,7 +158,6 @@
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
   <project path="hardware/msm7k" name="platform/hardware/msm7k" />
-  <project path="hardware/omap3/libgralloc" name="hardware_omap3_libgralloc" remote="gitorious" revision="master" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" />
   <project path="hardware/ril" name="platform/hardware/ril" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
@@ -176,7 +193,6 @@
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
   <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" />
-  <project path="packages/apps/buglabs-demo-app" name="buglabs-demo-app" remote="cekay" revision="master" />
   <project path="packages/experimental" name="platform/packages/experimental" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" />
   <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" />
