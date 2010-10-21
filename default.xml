@@ -2,7 +2,7 @@
 <manifest>
   <!-- General git host for BugLabs Android stuff -->
   <remote  name="github"
-           fetch="git@github.com:" />
+           fetch="git@github.com:" revision="froyo" />
 
   <remote  name="gitorious"
            fetch="http://git.gitorious.org/" />
@@ -38,6 +38,18 @@
 	remote="github"
   />
 
+  <project
+	path="system/core"
+	name="buglabs/android-buglabs-system-core"
+	remote="github"
+  />
+
+  <project
+	path="external/tslib"
+	name="buglabs/android-buglabs-external-tslib"
+	remote="github"
+  />
+  
   <!-- omap3-specific gralloc implementation from 0xdroid project -->
   <project
 	path="hardware/omap3/libgralloc"
@@ -45,7 +57,7 @@
 	remote="gitorious"
 	revision="master"
   />
-  
+
   <project path="bionic" name="platform/bionic" />
 
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
@@ -211,7 +223,6 @@
   <project path="prebuilt" name="platform/prebuilt" />
   <project path="sdk" name="platform/sdk"  revision="tools_r6"/>
   <project path="system/bluetooth" name="platform/system/bluetooth" />
-  <project path="system/core" name="platform/system/core" />
   <project path="system/extras" name="platform/system/extras" />
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
