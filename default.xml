@@ -58,6 +58,14 @@
 	revision="master"
   />
 
+  <!-- bug2.0 Android kernel source -->
+  <project
+	path="kernel"
+	name="buglabs/android-froyo-kernel"
+	remote="github"
+	revision="master"
+  />
+
   <project path="bionic" name="platform/bionic" />
 
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
