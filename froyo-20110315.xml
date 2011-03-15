@@ -18,7 +18,7 @@
   <project
 	path="build"
 	name="buglabs/android-buglabs-build"
-	remote="github" revision="froyo" >
+	remote="github" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
@@ -29,7 +29,6 @@
 	path="device/buglabs"
 	name="buglabs/android-buglabs-device"
 	remote="github"
-	 revision="froyo"
   />
   
   <!-- Simple demo application that can be added to the images. -->
@@ -37,30 +36,24 @@
 	path="packages/apps/buglabs-demo-app"
 	name="buglabs/android-buglabs-demo-app"
 	remote="github"
-	 revision="froyo"
   />
 
-<!-- 
   <project
 	path="frameworks/base"
 	name="buglabs/android-buglabs-frameworks-base"
 	remote="github"
-	 revision="froyo"
   />
-   -->
 
   <project
 	path="system/core"
 	name="buglabs/android-buglabs-system-core"
 	remote="github"
-	 revision="froyo"
   />
 
   <project
 	path="external/tslib"
 	name="buglabs/android-buglabs-external-tslib"
 	remote="github"
-	revision="froyo"
   />
   
   <!-- omap3-specific gralloc implementation from 0xdroid project -->
@@ -175,15 +168,14 @@
   <project path="external/yaffs2" name="platform/external/yaffs2" />
   <project path="external/zlib" name="platform/external/zlib" />
   <project path="external/alsa-lib" name="platform/external/alsa-lib" />
-  <project path="external/alsa-utils" name="platform/external/alsa-utils"/>
+  <project path="external/alsa-utils" name="platform/external/alsa-utils" />
 
-  <project path="frameworks/base" name="platform/frameworks/base" />
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
   <project path="frameworks/policies/base" name="platform/frameworks/policies/base" />
 
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" />
-  <project path="hardware/alsa_sound" name="platform/hardware/alsa_sound"/>
+  <project path="hardware/alsa_sound" name="platform/hardware/alsa_sound" />
 
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
