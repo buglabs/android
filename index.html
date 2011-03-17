@@ -8,74 +8,71 @@
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #4eca3f;
+      background-color: white;
       font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
+      color: #464337;
+     /* background: url(http://bugcommunity.com/images/bug_logo_small.gif) no-repeat;*/ 
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #b135c0; margin-bottom: 3px; }
+    a { color: #0c97c5; text-decoration:none;}
+	a:visited { color: #0c97c5; }
+	a:hover { color: #ff7300; text-decoration:underline; }
+p{
+	/*margin: 0 0 1em 0; */
+	line-height: 1.5em;
+	margin-bottom:10px;
+}
+    h1 { color: black; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #b135c0; }
-    h3 { text-align: center; color: #b135c0; }
-    a { color: #b135c0; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    h2 { font-size: 1.0em; color: black; }
+    h3 { text-align: center; color: black; }
+    .description { font-size: 1.5em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}      
   </style>
 </head>
 
 <body>
-  <a href="http://github.com/buglabs/android"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <a href="http://buglabs.net"><img width="20%" style="position: absolute; top: 0; right: 0; border: 0;" src="http://bugcommunity.com/images/buglabs_logo-hand_drawn.jpg"/></a>
 
   <div id="container">
 
-    <div class="download">
-      <a href="http://github.com/buglabs/android/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/buglabs/android/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/buglabs/android">Android</a>
-      <span class="small">by <a href="http://github.com/buglabs">buglabs</a></span></h1>
+    <h1><a href="http://github.com/buglabs/android">Android on BUG 2.0</a></h1>
 
     <div class="description">
-      Android on BUG 2.0
+      Run Android on your BUG 2.0 device.
     </div>
 
-    <p>This is the repo project for the Bug Labs-based port of Android to the BUG 2.0 device.  </p><h2>Install</h2>
-<p>For those wishing to bulid from source, follow the instructions on this page:  http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT
+    <p>This is the repo project for the Bug Labs-based port of Android to the BUG 2.0 device.</p>
+    <p>The contents from this project can be used to hack on the Android platform as well as run 
+    Android software on BUG hardware.</p>
+    
+    <h2>Install Binaries</h2>
+For those wishing to simply run Android on the BUG device, go to the build drops page hosted on bugcommunity.com: <a href="http://bugcommunity.com/downloads/files/android_builds/">http://bugcommunity.com/downloads/files/android_builds</a></p>
+<h2>Build from Source</h2>
+<p>By using the repo command, you can checkout all the projects necessary to build Android on BUG with:</p>
+<pre>$ repo init -u git@github.com:buglabs/android.git</pre>
 
-For those wishing to simply run Android on the BUG device, stay tuned for binary builds.</p>
-<h2>Authors</h2>
-<p>android-build SharedAccount (android-build@google.com)<br/>Christian Kuester (c.kuester@tarent.de)<br/>Dave Bort (dbort@android.com)<br/>Ed Heyl (edheyl@google.com)<br/>The Android Open Source Project (initial-contribution@android.com)<br/>Jean-Baptiste Queru (jbq@google.com)<br/>Robert Schuster (rschus@tarub.tarent.buero)<br/>Shawn O. Pearce (sop@google.com)<br/><br/>      </p>
+<p>For detailed instructions on building from source, check this page:  <a href="http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT">http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT</a>.</p>
+<h2>Contributors</h2>
+<p>Matt Isaacs (misaacs@buglabs.net)
+<br/>Ken Gilmer (kgilmer@buglabs.net)
+<br/>Christian Kuester (c.kuester@tarent.de)
+<br/>Robert Schuster (rschus@tarent.de)
+<br/>      </p>
 <h2>Contact</h2>
-<p>Bug Labs (kgilmer@buglabs.net)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/buglabs/android/zipball/master">zip</a> or
-      <a href="http://github.com/buglabs/android/tarball/master">tar</a> formats.
-    </p>
+<p><a href="http://www.buglabs.net">Bug Labs</a> (kgilmer@buglabs.net)
+<br/>      </p>
     <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
       <pre>$ git clone git://github.com/buglabs/android</pre>
     </p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/buglabs/android">buglabs/android</a>
-    </div>
-
-  </div>
-
-  
+  </div>   
 </body>
 </html>
