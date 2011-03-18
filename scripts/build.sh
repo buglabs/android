@@ -59,30 +59,29 @@ if [ ! -d .repo ]; then
 fi
 
 # Sync projects
-repo sync
+#repo sync
 
 # Initialize build environment
 source build/envsetup.sh
 
 # Select target build configuration in Android build system
-lunch $LUNCH_BUILD_OPTION
+#lunch $LUNCH_BUILD_OPTION
 
 # Run the build
-make $MAKE_OPTS
+#make $MAKE_OPTS
 
 # Create dir for compressed installation image
-if [ ! -d $DIST_DIR ]; then
-  mkdir $DIST_DIR
-  mkdir $DIST_DIR/tmp
+if [ ! -d $DIST_DIR/tmp ]; then
+  mkdir -p $DIST_DIR/tmp
 fi
 
 # Create tarball of runnable image.
-cp $WORKSPACE/$BUG20_OUT_PATH/kernel $DIST_DIR/tmp/uImage-$BUILD_TAG
+cp $WORKSPACE/$BUG20_OUT_PATH/kernel $DIST_DIR/tmp/uImage
 cd $WORKSPACE/$BUG20_OUT_PATH/root
-tar cfps $DIST_DIR/tmp/rootfs-$BUILD_TAG.tar ./*
+tar cfps $DIST_DIR/tmp/rootfs.tar ./*
 cd ..
-tar rfps $DIST_DIR/tmp/rootfs-$BUILD_TAG.tar system 
-tar rfps $DIST_DIR/tmp/rootfs-$BUILD_TAG.tar data
+tar rfps $DIST_DIR/tmp/rootfs.tar system 
+tar rfps $DIST_DIR/tmp/rootfs.tar data
 cd $WORKSPACE
 tar cfz $DIST_DIR/dist-$BUILD_TAG.tar.gz $DIST_DIR/tmp/*
 # Cleanup
