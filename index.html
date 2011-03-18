@@ -27,10 +27,10 @@
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
     h2 { font-size: 1.0em; color: black; }
-    h3 { font-size: 0.9em; color: #464337; }
-    .description { font-size: 1.5em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    h3 { font-size: 0.9em; color: #464337; font-weight:normal; }
+    .description { font-size: 1.3em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
-    pre { background: #464337; color: #fff; padding: 5px;}
+    pre { background: #464337; color: #fff; padding: 5px; font-weight:bold;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}      
   </style>
   <script type="text/javascript">
@@ -59,9 +59,11 @@
       Run Android on your BUG 2.0 device.
     </div>
 
-    <p>This is the start page for the Bug Labs-based port of Google's Android to the <a href="http://www.buglabs.net/products">BUG 2.0 device</a>.</p>
-    <p>This project can be used to hack on the Android platform internals as well as run Android software on BUG hardware.  
-    This is an open project that welcomes contributions, and utilizes the transparent GitHub project infrastructure for <a href="https://github.com/buglabs/android/commits/master">source control</a> and <a href="https://github.com/buglabs/android/issues">issue tracking</a>.</p>
+    <p>Welcome to the start page for the Bug Labs-based port of Google's Android to the <a href="http://www.buglabs.net/products">BUG 2.0 device</a>.</p>
+    <p>This is an open project that welcomes contributions, and utilizes the transparent GitHub project infrastructure for <a href="https://github.com/buglabs/android/commits/master">source control</a> and <a href="https://github.com/buglabs/android/issues">issue tracking</a>.
+    Android for BUG is currently pre-alpha level of quality with much work to be done in defect fixes and hardware/API support, however it can be immediately
+    used to hack on the Android platform internals as well as run some Android software on BUG hardware.
+    </p>
     
     <h2>Install Android Binaries</h2>
 For those wishing to simply run Android on the BUG device, go to the build drops page hosted on bugcommunity.com: <a href="http://bugcommunity.com/downloads/files/android_builds/">http://bugcommunity.com/downloads/files/android_builds</a></p>
@@ -76,8 +78,13 @@ $ ./create-sdcard.sh [CARD READER DEVICE] [IMAGE]
 <p>Now, after the writing is complete, put the card in the BUG and boot it.</p>
 <h2>Build Android Source</h2>
 <p>By using the repo command, you can checkout all the projects necessary to build Android on BUG with:</p>
-<pre>$ repo init -u git@github.com:buglabs/android.git</pre>
-
+<pre>
+$ repo init -u git@github.com:buglabs/android.git
+</pre>
+<p>A build script is provided to download all necessary sources, configure, and execute the build.  This script is used by the automation system.
+<pre>
+$ 
+</pre>
 <p>For detailed instructions on building from source, check this page:  <a href="http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT">http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT</a>.</p>
 <h2>Contributors</h2>
 <p>Matt Isaacs (misaacs@buglabs.net)
