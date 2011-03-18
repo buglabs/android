@@ -23,11 +23,14 @@
 		margin: 0 0 1em 0; 
 		line-height: 1.5em;
 	}
+	img.center { display: block;   margin-left: auto; margin-right: auto; border-style:solid; border-width:5px; border-color: #464337;}
+	img.logo { display: block;   margin-left: auto; margin-right: auto;}
     h1 { color: black; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
     h2 { font-size: 1.0em; color: black; }
     h3 { font-size: 0.9em; color: #464337; font-weight:normal; }
+    h3.center { text-align: center; }
     .description { font-size: 1.3em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #464337; color: #fff; padding: 5px; font-weight:bold;}
@@ -48,9 +51,7 @@
 </script>
 </head>
 
-<body>
-  <a href="http://buglabs.net"><img width="20%" style="position: absolute; top: 0; right: 0; border: 0;" src="http://bugcommunity.com/images/buglabs_logo-hand_drawn.jpg"/></a>
-
+<body>  
   <div id="container">
 
     <h1><a href="http://github.com/buglabs/android">Android on BUG 2.0</a></h1>
@@ -70,22 +71,26 @@ For those wishing to simply run Android on the BUG device, go to the build drops
 <h3>Create Bootable Android SD Card</h3>
 Here is how you can write it to an SD card such that it can be booted:
 <pre>
-$ git clone xxx
+$ git clone git@github.com:buglabs/android.git -b froyo
 $ cd android/scripts
 $ wget [URL to IMAGE]
-$ ./create-sdcard.sh [CARD READER DEVICE] [IMAGE]
+$ ./mkimage.sh [CARD READER DEVICE] [IMAGE]
 </pre>
 <p>Now, after the writing is complete, put the card in the BUG and boot it.</p>
 <h2>Build Android Source</h2>
-<p>By using the repo command, you can checkout all the projects necessary to build Android on BUG with:</p>
-<pre>
-$ repo init -u git@github.com:buglabs/android.git
-</pre>
+
 <p>A build script is provided to download all necessary sources, configure, and execute the build.  This script is used by the automation system.
 <pre>
-$ 
+$ git clone git@github.com:buglabs/android.git -b froyo
+$ cd android
+$ scripts/build.sh
 </pre>
 <p>For detailed instructions on building from source, check this page:  <a href="http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT">http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT</a>.</p>
+<h2>Screenshots</h2>
+<img class="center" src="images/device.png"/>
+<h3 class="center">Lock screen on LCD Module</h3>
+<img class="center" width="700" src="images/eclipse-android.png"/>
+<h3 class="center">ADB Connecting to BUG and Inspecting Running Threads</h3>
 <h2>Contributors</h2>
 <p>Matt Isaacs (misaacs@buglabs.net)
 <br/>Ken Gilmer (kgilmer@buglabs.net)
@@ -101,5 +106,6 @@ $
     </p>
 
   </div>   
+  <img width="20%" class="logo" src="images/buglabs_logo-hand_drawn.jpg"/>
 </body>
 </html>
