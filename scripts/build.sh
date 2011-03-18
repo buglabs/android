@@ -59,16 +59,16 @@ if [ ! -d .repo ]; then
 fi
 
 # Sync projects
-#repo sync
+repo sync
 
 # Initialize build environment
 source build/envsetup.sh
 
 # Select target build configuration in Android build system
-#lunch $LUNCH_BUILD_OPTION
+lunch $LUNCH_BUILD_OPTION
 
 # Run the build
-#make $MAKE_OPTS
+make $MAKE_OPTS
 
 # Create dir for compressed installation image
 if [ ! -d $DIST_DIR/tmp ]; then
