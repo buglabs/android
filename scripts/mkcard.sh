@@ -66,7 +66,7 @@ else
 		echo "Cant find rootfs partition in /dev"
 	fi
 fi
-sleep 2
+sleep 1
 
 set +e
 mkdir /tmp/mkcard
@@ -83,7 +83,7 @@ tar xf /tmp/mkcard/rootfs.tar -C /tmp/mp2
 sync
 umount $BOOT_PARTITION
 umount $ROOT_PARTITION
-sleep 2
+sleep 1
 rmdir /tmp/mp1
 rmdir /tmp/mp2
 rm -Rf /tmp/mkcard
