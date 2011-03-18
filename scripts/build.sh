@@ -43,7 +43,7 @@ if [ -z $DIST_DIR ]; then
 fi
 
 if [ -z $BUILD_TAG ]; then
-	BUILD_TAG="local-`date +'%m%d%y%H%M%S'`"	
+	BUILD_TAG="`uname -n`-`date +'%m%d%y%H%M%S'`"	
 fi
 
 echo "################################"
@@ -51,10 +51,12 @@ echo "# BUILD_BRANCH: $BUILD_BRANCH"
 echo "# WORKSPACE:    $WORKSPACE"
 echo "# DIST_DIR:     $DIST_DIR"
 echo "# BUILD_TAG:    $BUILD_TAG"
-echo "################################\n"
+echo "################################"
 
-# Checkout the repo configuration
-repo init -u git@github.com:buglabs/android.git -b $BUILD_BRANCH
+if [ ! -d .repo ]; then
+	# Checkout the repo configuration
+	repo init -u git@github.com:buglabs/android.git -b $BUILD_BRANCH
+fi
 
 # Sync projects
 repo sync
