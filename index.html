@@ -11,7 +11,6 @@
       background-color: white;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #464337;
-     /* background: url(http://bugcommunity.com/images/bug_logo_small.gif) no-repeat;*/ 
     }
     #container {
       margin: 0 auto;
@@ -20,19 +19,18 @@
     a { color: #0c97c5; text-decoration:none;}
 	a:visited { color: #0c97c5; }
 	a:hover { color: #ff7300; text-decoration:underline; }
-p{
-	/*margin: 0 0 1em 0; */
-	line-height: 1.5em;
-	margin-bottom:10px;
-}
+	p{
+		margin: 0 0 1em 0; 
+		line-height: 1.5em;
+	}
     h1 { color: black; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
     h2 { font-size: 1.0em; color: black; }
-    h3 { text-align: center; color: black; }
+    h3 { font-size: 0.9em; color: #464337; }
     .description { font-size: 1.5em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
+    pre { background: #464337; color: #fff; padding: 5px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}      
   </style>
   <script type="text/javascript">
@@ -61,13 +59,22 @@ p{
       Run Android on your BUG 2.0 device.
     </div>
 
-    <p>This is the repo project for the Bug Labs-based port of Android to the BUG 2.0 device.</p>
-    <p>The contents from this project can be used to hack on the Android platform as well as run 
-    Android software on BUG hardware.</p>
+    <p>This is the start page for the Bug Labs-based port of Google's Android to the <a href="http://www.buglabs.net/products">BUG 2.0 device</a>.</p>
+    <p>This project can be used to hack on the Android platform internals as well as run Android software on BUG hardware.  
+    This is an open project that welcomes contributions, and utilizes the transparent GitHub project infrastructure for <a href="https://github.com/buglabs/android/commits/master">source control</a> and <a href="https://github.com/buglabs/android/issues">issue tracking</a>.</p>
     
-    <h2>Install Binaries</h2>
+    <h2>Install Android Binaries</h2>
 For those wishing to simply run Android on the BUG device, go to the build drops page hosted on bugcommunity.com: <a href="http://bugcommunity.com/downloads/files/android_builds/">http://bugcommunity.com/downloads/files/android_builds</a></p>
-<h2>Build from Source</h2>
+<h3>Create Bootable Android SD Card</h3>
+Here is how you can write it to an SD card such that it can be booted:
+<pre>
+$ git clone xxx
+$ cd android/scripts
+$ wget [URL to IMAGE]
+$ ./create-sdcard.sh [CARD READER DEVICE] [IMAGE]
+</pre>
+<p>Now, after the writing is complete, put the card in the BUG and boot it.</p>
+<h2>Build Android Source</h2>
 <p>By using the repo command, you can checkout all the projects necessary to build Android on BUG with:</p>
 <pre>$ repo init -u git@github.com:buglabs/android.git</pre>
 
