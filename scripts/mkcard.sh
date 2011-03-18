@@ -42,12 +42,12 @@ sleep 1
 if [ -b ${DRIVE}1 ]; then
 	umount ${DRIVE}1
 	mkfs.vfat -F 32 -n "boot" ${DRIVE}1
-	mount ${DRIVE}1 /tmp/mp1
+	BOOT_PARTITION=${DRIVE}1
 else
 	if [ -b ${DRIVE}p1 ]; then
 		umount ${DRIVE}p1
 		mkfs.vfat -F 32 -n "boot" ${DRIVE}p1
-		mount ${DRIVE}p1 /tmp/mp1
+		BOOT_PARTITION=${DRIVE}p1
 	else
 		echo "Cant find boot partition in /dev"
 	fi
@@ -56,28 +56,34 @@ fi
 if [ -b ${DRIVE}2 ]; then
 	umount ${DRIVE}2
 	mke2fs -j -L "root" ${DRIVE}2
-	mount ${DRIVE}2 /tmp/mp2
+	ROOT_PARTITION=${DRIVE}2
 else
 	if [ -b ${DRIVE}p2 ]; then
 		umount ${DRIVE}p2
 		mke2fs -j -L "root" ${DRIVE}p2
-		mount ${DRIVE}p2 /tmp/mp2
+		ROOT_PARTITION=${DRIVE}p2
 	else
 		echo "Cant find rootfs partition in /dev"
 	fi
 fi
+sleep 2
 
+set +e
 mkdir /tmp/mkcard
 echo "Extracting contents of image tarball..."
-tar xfz -C /tmp/mkcard $TARBALL 
+mount $BOOT_PARTITION /tmp/mp1
+mount $ROOT_PARTITION /tmp/mp2
+
+tar xfz $TARBALL -C /tmp/mkcard
 
 echo "Writing contents to sd card..."
-mv /tmp/mkcard/uImage /tmp/mp1/
-tar xf -C /tmp/mp2 /tmp/mkcard/rootfs.tar
+cp /tmp/mkcard/uImage /tmp/mp1/
+tar xf /tmp/mkcard/rootfs.tar -C /tmp/mp2 
 
 sync
-umount /tmp/mp1
-umount /tmp/mp2
+umount $BOOT_PARTITION
+umount $ROOT_PARTITION
+sleep 2
 rmdir /tmp/mp1
 rmdir /tmp/mp2
 rm -Rf /tmp/mkcard
