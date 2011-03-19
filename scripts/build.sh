@@ -22,7 +22,6 @@ CMD=curl
 which $CMD &> /dev/null || { echo "Please install $CMD and re-run the script."; exit 1; }
 CMD=repo
 which $CMD &> /dev/null || { echo "Please install $CMD and re-run the script."; exit 1; }
-set +e
 
 # Variables to set
 # 
