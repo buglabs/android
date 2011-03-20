@@ -76,7 +76,7 @@ $ cd android/scripts
 $ wget [URL to IMAGE]
 $ ./mkimage.sh [CARD READER DEVICE] [IMAGE]
 </pre>
-<p>Now, after the writing is complete, put the card in the BUG and boot it.</p>
+<p>Now, after the writing is complete, put the card in the BUG and boot it.  Note, currently u-boot needs to be configured to boot Android.  Refer to <a href="https://github.com/buglabs/android/wiki/BUG-2.0-Android-Boot-Procedure"/>this page</a> for details.</p>
 <h2>Build Android Source</h2>
 
 <p>A build script is provided to download all necessary sources, configure, and execute the build.  This script is used by the automation system.
@@ -91,14 +91,17 @@ $ scripts/build.sh
 <h3 class="center">Lock screen on LCD Module</h3>
 <img class="center" width="700" src="images/eclipse-android.png"/>
 <h3 class="center">ADB Connecting to BUG and Inspecting Running Threads</h3>
+<img class="center" width="700" src="images/booting.png"/>
+<h3 class="center">Obligatory blurry booting shot, taken with iPhone</h3>
 <h2>Resources</h2>
 <p>
 <ul>
-<li>The read-only build page for Android on BUG2 has the most information: <a href="http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT"/>http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT</a></li>
 <li>The active wiki for Android on BUG 2.0 project: <a href="https://github.com/buglabs/android/wiki">https://github.com/buglabs/android/wiki</a></li>
+<li>The read-only wiki page for Android on BUG2 has the most information: <a href="http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT"/>http://wiki.buglabs.net/index.php/Experimental:Building_Android_image_for_BUG_YT</a></li>
 <li>Hardware Support Status Page: <a href="https://github.com/buglabs/android/wiki/Supported-Hardware">https://github.com/buglabs/android/wiki/Supported-Hardware</a></li>
 <li>Release Milestones Page: <a href="https://github.com/buglabs/android/wiki/Release-Milestones">https://github.com/buglabs/android/wiki/Release-Milestones</a></li>
 <li>The GIT repositories for Android: <a href="http://android.git.kernel.org/"/>http://android.git.kernel.org/</a></li>
+<li>Project Issues: <a href="https://github.com/buglabs/android/issues">https://github.com/buglabs/android/issues</a></li>
 </ul>
 </p>
 <h2>Contributors</h2>
