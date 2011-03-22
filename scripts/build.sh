@@ -58,7 +58,11 @@ if [ ! -d .repo ]; then
 fi
 
 # Sync projects
-repo sync
+if [ -z $NO_SYNC ]; then
+	repo sync
+else 
+	echo "Not syncing repo, NO_SYNC set."
+fi
 
 # Initialize build environment
 source build/envsetup.sh
