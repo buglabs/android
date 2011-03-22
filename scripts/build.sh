@@ -25,7 +25,7 @@ which $CMD &> /dev/null || { echo "Please install $CMD and re-run the script."; 
 
 # Variables to set
 # 
-BUG20_OUT_PATH=android/out/target/product/bug20/
+BUG20_OUT_PATH=out/target/product/bug20/
 MAKE_OPTS="-j 4"
 LUNCH_BUILD_OPTION=5
 
@@ -75,8 +75,8 @@ if [ ! -d $DIST_DIR/tmp ]; then
 fi
 
 # Create tarball of runnable image.
-cp $WORKSPACE/$BUG20_OUT_PATH/kernel $DIST_DIR/tmp/uImage
-cd $WORKSPACE/$BUG20_OUT_PATH/root
+cp $BUG20_OUT_PATH/kernel $DIST_DIR/tmp/uImage
+cd $BUG20_OUT_PATH/root
 tar cfps $DIST_DIR/tmp/rootfs.tar ./*
 cd ..
 tar rfps $DIST_DIR/tmp/rootfs.tar system 
