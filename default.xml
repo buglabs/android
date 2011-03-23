@@ -69,7 +69,7 @@
 	path="kernel"
 	name="buglabs/android-froyo-kernel"
 	remote="github"
-	revision="master"
+	revision="froyo"
   />
 
   <project path="bionic" name="platform/bionic" />
