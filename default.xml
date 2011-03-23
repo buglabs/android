@@ -37,6 +37,12 @@
 	name="buglabs/android-buglabs-demo-app"
 	remote="github"
   />
+  
+  <project
+	path="frameworks/base"
+	name="buglabs/android-buglabs-frameworks-base"
+	remote="github"
+  />
 
   <project
 	path="system/core"
@@ -164,7 +170,9 @@
   <project path="external/alsa-lib" name="platform/external/alsa-lib" />
   <project path="external/alsa-utils" name="platform/external/alsa-utils" />
 
+  <!-- 
   <project path="frameworks/base" name="platform/frameworks/base" />
+   -->
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
   <project path="frameworks/policies/base" name="platform/frameworks/policies/base" />
