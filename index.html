@@ -76,7 +76,7 @@ $ cd android/scripts
 $ wget [URL to IMAGE]
 $ ./mkimage.sh [CARD READER DEVICE] [IMAGE]
 </pre>
-<p>Now, after the writing is complete, put the card in the BUG and boot it.  Note, currently u-boot needs to be configured to boot Android.  Refer to <a href="https://github.com/buglabs/android/wiki/BUG-2.0-Android-Boot-Procedure"/>this page</a> for details.</p>
+<p>Now, after the writing is complete, put the card in the BUG and boot it.  Note: for LCD module, some manual configuration is necessary.  See <a href="https://github.com/buglabs/android/issues#issue/1"> this issue</a> for details.</p>
 <h2>Build Android Source</h2>
 
 <p>A build script is provided to download all necessary sources, configure, and execute the build.  This script is used by the automation system.
@@ -89,6 +89,8 @@ $ scripts/build.sh
 <h2>Screenshots</h2>
 <img class="center" src="images/device.png"/>
 <h3 class="center">Lock screen on LCD Module</h3>
+<img class="center" src="images/device2.png"/>
+<h3 class="center">Home screen on LCD Module</h3>
 <img class="center" width="700" src="images/eclipse-android.png"/>
 <h3 class="center">ADB Connecting to BUG and Inspecting Running Threads</h3>
 <img class="center" height="480" src="images/booting.jpg"/>
