@@ -16,6 +16,11 @@ if [ $# -ne 2 ]; then
 	exit 1;
 fi
 
+if [ "$(id -u)" != "0" ]; then
+	echo "This script must be run as root."
+	exit 1
+fi
+
 DRIVE=$1
 TARBALL=$2
 
@@ -82,4 +87,4 @@ umount $ROOT_PARTITION
 sleep 1
 rmdir /tmp/mp1
 rm -Rf /tmp/mkcard
-echo "Completed succesfully, sd card is ready to be booted."
+echo "Completed succesfully, sd card ${DRIVE} ready to be booted."
