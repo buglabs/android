@@ -24,6 +24,11 @@ fi
 DRIVE=$1
 TARBALL=$2
 
+if [ ! -f ${DRIVE} ]; then
+	echo "Drive ${DRIVE} does not exist."
+	exit 1
+fi
+
 # Remove directories that may be hanging around from prevoius partial or erronous run.
 if [ -d /tmp/mp1 ]; then
   rm -Rf /tmp/mp1
