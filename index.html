@@ -71,7 +71,7 @@ For those wishing to simply run Android on the BUG device, go to the build drops
 <h3>Create Bootable Android SD Card</h3>
 Here is how you can write it to an SD card such that it can be booted:
 <pre>
-$ git clone git@github.com:buglabs/android.git -b froyo
+$ git clone git://github.com/buglabs/android.git
 $ cd android/scripts
 $ wget [URL to IMAGE]
 $ sudo ./mkcard.sh [CARD READER DEVICE] [IMAGE]
@@ -81,7 +81,7 @@ $ sudo ./mkcard.sh [CARD READER DEVICE] [IMAGE]
 
 <p>A build script is provided to download all necessary sources, configure, and execute the build.  This script is used by the automation system.
 <pre>
-$ git clone git@github.com:buglabs/android.git -b froyo
+$ git clone git://github.com/buglabs/android.git
 $ cd android
 $ scripts/build.sh
 </pre>
@@ -115,11 +115,6 @@ $ scripts/build.sh
 <h2>Contact</h2>
 <p><a href="http://www.buglabs.net">Bug Labs</a> (kgilmer@buglabs.net)
 <br/>      </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/buglabs/android</pre>
-    </p>
-
   </div>   
   <img width="20%" class="logo" src="images/buglabs_logo-hand_drawn.jpg"/>
 </body>
