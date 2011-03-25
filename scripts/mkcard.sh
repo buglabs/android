@@ -24,7 +24,7 @@ fi
 DRIVE=$1
 TARBALL=$2
 
-if [ ! -f ${DRIVE} ]; then
+if [ ! -e ${DRIVE} ]; then
 	echo "Drive ${DRIVE} does not exist."
 	exit 1
 fi
