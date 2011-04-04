@@ -29,6 +29,14 @@ if [ ! -e ${DRIVE} ]; then
 	exit 1
 fi
 
+FDISK_INFO=`sudo fdisk -l | grep ${DRIVE} | grep bytes`
+
+if [[ $FDISK_INFO != *MB* ]]
+then
+        echo "Disk device is unusually large, refusing to continue: $FDISK_INFO"
+        exit -1
+fi
+
 # Remove directories that may be hanging around from prevoius partial or erronous run.
 if [ -d /tmp/mp1 ]; then
   rm -Rf /tmp/mp1
