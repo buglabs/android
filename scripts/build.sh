@@ -87,6 +87,11 @@ tar rfps $DIST_DIR/tmp/rootfs.tar system
 tar rfps $DIST_DIR/tmp/rootfs.tar data
 cd $DIST_DIR/tmp
 tar cfz $DIST_DIR/dist-$BUILD_TAG.tar.gz *
+cd ..
+if [ -h $DIST_DIR/current ]; then
+  rm $DIST_DIR/current
+fi
+ln -s $DIST_DIR/dist-$BUILD_TAG.tar.gz $DIST_DIR/current
 # Cleanup
 cd $WORKSPACE
 rm -Rf $DIST_DIR/tmp
