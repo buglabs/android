@@ -56,6 +56,13 @@
 	remote="github"
   />
   
+  <project 
+    path="external/busybox" 
+    name="buglabs/android_external_busybox" 
+    revision="master" 
+    remote="github"
+  />
+  
   <!-- omap3-specific gralloc implementation from 0xdroid project -->
   <project
 	path="hardware/omap3/libgralloc"
