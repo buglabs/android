@@ -70,11 +70,11 @@ source build/envsetup.sh
 # Select target build configuration in Android build system
 lunch $LUNCH_BUILD_OPTION
 
-if [ -z $ANDROID_CLEAN ]; then
+if [ -z $ANDROID_CLEAN ]; then 
+	echo "Not cleaning before build"
+else
     echo "Cleaning before build"
 	make clean
-else 
-	echo "Not cleaning before build"
 fi
 
 # Run the build
