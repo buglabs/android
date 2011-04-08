@@ -73,6 +73,8 @@ lunch $LUNCH_BUILD_OPTION
 if [ -z $ANDROID_CLEAN ]; then
     echo "Cleaning before build"
 	make clean
+else 
+	echo "Not cleaning before build"
 fi
 
 # Run the build
