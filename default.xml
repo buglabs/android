@@ -2,7 +2,7 @@
 <manifest>
   <!-- General git host for BugLabs Android stuff -->
   <remote  name="github"
-           fetch="git@github.com:" revision="froyo" />
+           fetch="git@github.com:" revision="experimental" />
 
   <remote  name="gitorious"
            fetch="http://git.gitorious.org/" />
@@ -76,7 +76,7 @@
 	path="kernel"
 	name="buglabs/android-froyo-kernel"
 	remote="github"
-	revision="froyo"
+	revision="experimental"
   />
 
   <project path="bionic" name="platform/bionic" />
