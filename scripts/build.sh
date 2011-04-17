@@ -27,7 +27,7 @@ which $CMD &> /dev/null || { echo "Please install $CMD and re-run the script."; 
 # 
 BUG20_OUT_PATH=out/target/product/bug20/
 MAKE_OPTS="-j 4"
-LUNCH_BUILD_OPTION=3
+LUNCH_BUILD_OPTION=5
 
 if [ -z $BUILD_BRANCH ]; then
 	BUILD_BRANCH=froyo
