@@ -70,6 +70,14 @@
 	remote="gitorious"
 	revision="master"
   />
+  
+  <!-- Bug Labs-specific liblights implementation from Matt Isaac's personal github account -->
+  <project
+	path="hardware/omap3/liblights"
+	name="haveahennessy/liblights-bl"
+	remote="github"
+	revision="master"
+  />
 
   <!-- bug2.0 Android kernel source -->
   <project
