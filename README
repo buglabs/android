@@ -4,11 +4,9 @@ http://buglabs.github.com/android/
 
 To install repo, the tool that makes easier to work with git in the context of Android, please run the following in you terminal:
 
-```shell 
 $ mkdir ~/bin
 $ PATH=~/bin:$PATH
 $ curl https://android.git.kernel.org/repo > ~/bin/repo
 $ chmod a+x ~/bin/repo
-```
 
 Reference: http://source.android.com/source/downloading.html
