@@ -1,3 +1,6 @@
 This is the top-level git repo for the Android on BUG 2.0 project.  Refer to the start page for further details:
 
 http://buglabs.github.com/android/
+
+For details about how to install repo, the tool that makes easier to work with git in the context of Android, please take a look at: 
+http://source.android.com/source/downloading.html
